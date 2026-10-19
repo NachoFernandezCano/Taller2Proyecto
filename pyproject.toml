@@ -1,0 +1,39 @@
+[project]
+name = "sentiment-metacritic-taller2"
+version = "0.1.0"
+description = "Pipeline de Análisis de Sentimiento con reseñas de Metacritic para Taller II - UNSTA"
+authors = [
+    {name = "Estudiante Taller II", email = "estudiante@unsta.edu.ar"}
+]
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "gensim",
+    "transformers",
+    "torch"
+]
+requires-python = ">=3.10"
+
+[tool.poetry]
+name = "sentiment-metacritic-taller2"
+version = "0.1.0"
+description = "Pipeline de Análisis de Sentimiento con reseñas de Metacritic para Taller II - UNSTA"
+authors = ["Estudiante Taller II <estudiante@unsta.edu.ar>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+requests = "*"
+beautifulsoup4 = "*"
+pandas = "*"
+numpy = "*"
+scikit-learn = "*"
+gensim = "*"
+transformers = "*"
+torch = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

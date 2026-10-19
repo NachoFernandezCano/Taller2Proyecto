@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "tipo": "Negación directa / Inversión de polaridad",
+    "oracion": "No puedo decir que el rendimiento gráfico o el diseño de niveles sea decepcionante.",
+    "sentimiento_real": "Positivo",
+    "explicacion": "Contiene la palabra negativa 'decepcionante' pero precedida por doble negación ('No puedo decir...'), engañando a modelos BoW simples."
+  },
+  {
+    "id": 2,
+    "tipo": "Inversión sintáctica / Cláusula adversativa",
+    "oracion": "Aunque al inicio prometía ser una obra maestra revolucionaria, el juego terminó siendo un desastre injugable lleno de microtransacciones.",
+    "sentimiento_real": "Negativo",
+    "explicacion": "La primera parte acumula léxico positivo ('obra maestra', 'revolucionaria'), pero la cláusula principal impone el sentido negativo real."
+  },
+  {
+    "id": 3,
+    "tipo": "Afijo morfológico negativo",
+    "oracion": "Es una experiencia innegablemente imperfecta y con mecánicas desacertadas.",
+    "sentimiento_real": "Negativo",
+    "explicacion": "Utiliza prefijos de negación ('in-', 'des-') que modelos basados en palabras completas sin lematización adecuada pueden malinterpretar."
+  }
+]
