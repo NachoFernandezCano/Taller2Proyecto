@@ -29,8 +29,12 @@ Calcula los tamaños de vocabulario ($|V|$) y las matrices resultantes en 5 esqu
 
 ---
 
-## Oraciones Adversariales (`data/processed/oraciones_adversariales.json`)
+## 🎯 4. Banco de Oraciones Adversariales (`data/processed/`)
 
-1. **Negación directa / Inversión de polaridad:** *"No puedo decir que el rendimiento gráfico o el diseño de niveles sea decepcionante."* $\rightarrow$ Positivo real.
-2. **Inversión sintáctica / Cláusula adversativa:** *"Aunque al inicio prometía ser una obra maestra revolucionaria, el juego terminó siendo un desastre injugable lleno de microtransacciones."* $\rightarrow$ Negativo real.
-3. **Afijo morfológico negativo:** *"Es una experiencia innegablemente imperfecta y con mecánicas desacertadas."* $\rightarrow$ Negativo real.
+Para la evaluación cualitativa de los modelos frente a casos complejos y trampas sintácticas/morfológicas, se diseñó el banco de oraciones disponible tanto en formato JSON como en CSV (`data/processed/oraciones_adversariales.json` y `data/processed/banco_oraciones_adversariales.csv`):
+
+| ID | Tipo de Trampa | Oración | Sentimiento Real | Justificación Teórica |
+|:---|:---|:---|:---:|:---|
+| 1 | **Negación directa / Inversión de polaridad** | *"No puedo decir que el rendimiento gráfico o el diseño de niveles sea decepcionante."* | **Positivo** | Contiene el término negativo *"decepcionante"*, pero precedido por doble negación (*"No puedo decir..."*). Modelos BoW sin n-gramas asignan peso negativo por presencia léxica. |
+| 2 | **Inversión sintáctica / Cláusula adversativa** | *"Aunque al inicio prometía ser una obra maestra revolucionaria, el juego terminó siendo un desastre injugable lleno de microtransacciones."* | **Negativo** | La primera parte acumula léxico positivo (*"obra maestra"*, *"revolucionaria"*), pero la cláusula principal impone el sentido negativo real (*"desastre injugable"*). |
+| 3 | **Afijo morfológico negativo** | *"Es una experiencia innegablemente imperfecta y con mecánicas desacertadas."* | **Negativo** | Emplea prefijos de negación (*"in-"*, *"des-"*). Modelos que no implementan lematización o análisis morfológico de subpalabras suelen fallar en reconocer la polaridad. |
